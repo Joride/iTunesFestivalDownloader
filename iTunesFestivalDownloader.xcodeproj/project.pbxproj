@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A24BAE0117F4B7B50027CE3D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24BAE0017F4B7B50027CE3D /* Cocoa.framework */; };
+		A24BAE0B17F4B7B50027CE3D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A24BAE0917F4B7B50027CE3D /* InfoPlist.strings */; };
+		A24BAE0D17F4B7B50027CE3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A24BAE0C17F4B7B50027CE3D /* main.m */; };
+		A24BAE1117F4B7B50027CE3D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A24BAE0F17F4B7B50027CE3D /* Credits.rtf */; };
+		A24BAE1417F4B7B50027CE3D /* iTunesFDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A24BAE1317F4B7B50027CE3D /* iTunesFDAppDelegate.m */; };
+		A24BAE1717F4B7B50027CE3D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A24BAE1517F4B7B50027CE3D /* MainMenu.xib */; };
+		A24BAE1917F4B7B50027CE3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A24BAE1817F4B7B50027CE3D /* Images.xcassets */; };
+		A24BAE2017F4B7B60027CE3D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24BAE1F17F4B7B60027CE3D /* XCTest.framework */; };
+		A24BAE2117F4B7B60027CE3D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24BAE0017F4B7B50027CE3D /* Cocoa.framework */; };
+		A24BAE2917F4B7B60027CE3D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A24BAE2717F4B7B60027CE3D /* InfoPlist.strings */; };
+		A24BAE2B17F4B7B60027CE3D /* iTunesFestivalDownloaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A24BAE2A17F4B7B60027CE3D /* iTunesFestivalDownloaderTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A24BAE2217F4B7B60027CE3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A24BADF517F4B7B50027CE3D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A24BADFC17F4B7B50027CE3D;
+			remoteInfo = iTunesFestivalDownloader;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A24BADFD17F4B7B50027CE3D /* iTunesFestivalDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesFestivalDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A24BAE0017F4B7B50027CE3D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A24BAE0317F4B7B50027CE3D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		A24BAE0417F4B7B50027CE3D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A24BAE0517F4B7B50027CE3D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A24BAE0817F4B7B50027CE3D /* iTunesFestivalDownloader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTunesFestivalDownloader-Info.plist"; sourceTree = "<group>"; };
+		A24BAE0A17F4B7B50027CE3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A24BAE0C17F4B7B50027CE3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A24BAE0E17F4B7B50027CE3D /* iTunesFestivalDownloader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iTunesFestivalDownloader-Prefix.pch"; sourceTree = "<group>"; };
+		A24BAE1017F4B7B50027CE3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		A24BAE1217F4B7B50027CE3D /* iTunesFDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTunesFDAppDelegate.h; sourceTree = "<group>"; };
+		A24BAE1317F4B7B50027CE3D /* iTunesFDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTunesFDAppDelegate.m; sourceTree = "<group>"; };
+		A24BAE1617F4B7B50027CE3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A24BAE1817F4B7B50027CE3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A24BAE1E17F4B7B60027CE3D /* iTunesFestivalDownloaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesFestivalDownloaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A24BAE1F17F4B7B60027CE3D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A24BAE2617F4B7B60027CE3D /* iTunesFestivalDownloaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTunesFestivalDownloaderTests-Info.plist"; sourceTree = "<group>"; };
+		A24BAE2817F4B7B60027CE3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A24BAE2A17F4B7B60027CE3D /* iTunesFestivalDownloaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTunesFestivalDownloaderTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A24BADFA17F4B7B50027CE3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A24BAE0117F4B7B50027CE3D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A24BAE1B17F4B7B60027CE3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A24BAE2117F4B7B60027CE3D /* Cocoa.framework in Frameworks */,
+				A24BAE2017F4B7B60027CE3D /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A24BADF417F4B7B50027CE3D = {
+			isa = PBXGroup;
+			children = (
+				A24BAE0617F4B7B50027CE3D /* iTunesFestivalDownloader */,
+				A24BAE2417F4B7B60027CE3D /* iTunesFestivalDownloaderTests */,
+				A24BADFF17F4B7B50027CE3D /* Frameworks */,
+				A24BADFE17F4B7B50027CE3D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A24BADFE17F4B7B50027CE3D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A24BADFD17F4B7B50027CE3D /* iTunesFestivalDownloader.app */,
+				A24BAE1E17F4B7B60027CE3D /* iTunesFestivalDownloaderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A24BADFF17F4B7B50027CE3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A24BAE0017F4B7B50027CE3D /* Cocoa.framework */,
+				A24BAE1F17F4B7B60027CE3D /* XCTest.framework */,
+				A24BAE0217F4B7B50027CE3D /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A24BAE0217F4B7B50027CE3D /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A24BAE0317F4B7B50027CE3D /* AppKit.framework */,
+				A24BAE0417F4B7B50027CE3D /* CoreData.framework */,
+				A24BAE0517F4B7B50027CE3D /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		A24BAE0617F4B7B50027CE3D /* iTunesFestivalDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				A24BAE1217F4B7B50027CE3D /* iTunesFDAppDelegate.h */,
+				A24BAE1317F4B7B50027CE3D /* iTunesFDAppDelegate.m */,
+				A24BAE1517F4B7B50027CE3D /* MainMenu.xib */,
+				A24BAE1817F4B7B50027CE3D /* Images.xcassets */,
+				A24BAE0717F4B7B50027CE3D /* Supporting Files */,
+			);
+			path = iTunesFestivalDownloader;
+			sourceTree = "<group>";
+		};
+		A24BAE0717F4B7B50027CE3D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A24BAE0817F4B7B50027CE3D /* iTunesFestivalDownloader-Info.plist */,
+				A24BAE0917F4B7B50027CE3D /* InfoPlist.strings */,
+				A24BAE0C17F4B7B50027CE3D /* main.m */,
+				A24BAE0E17F4B7B50027CE3D /* iTunesFestivalDownloader-Prefix.pch */,
+				A24BAE0F17F4B7B50027CE3D /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A24BAE2417F4B7B60027CE3D /* iTunesFestivalDownloaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				A24BAE2A17F4B7B60027CE3D /* iTunesFestivalDownloaderTests.m */,
+				A24BAE2517F4B7B60027CE3D /* Supporting Files */,
+			);
+			path = iTunesFestivalDownloaderTests;
+			sourceTree = "<group>";
+		};
+		A24BAE2517F4B7B60027CE3D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A24BAE2617F4B7B60027CE3D /* iTunesFestivalDownloaderTests-Info.plist */,
+				A24BAE2717F4B7B60027CE3D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A24BADFC17F4B7B50027CE3D /* iTunesFestivalDownloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A24BAE2E17F4B7B60027CE3D /* Build configuration list for PBXNativeTarget "iTunesFestivalDownloader" */;
+			buildPhases = (
+				A24BADF917F4B7B50027CE3D /* Sources */,
+				A24BADFA17F4B7B50027CE3D /* Frameworks */,
+				A24BADFB17F4B7B50027CE3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iTunesFestivalDownloader;
+			productName = iTunesFestivalDownloader;
+			productReference = A24BADFD17F4B7B50027CE3D /* iTunesFestivalDownloader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A24BAE1D17F4B7B60027CE3D /* iTunesFestivalDownloaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A24BAE3117F4B7B60027CE3D /* Build configuration list for PBXNativeTarget "iTunesFestivalDownloaderTests" */;
+			buildPhases = (
+				A24BAE1A17F4B7B60027CE3D /* Sources */,
+				A24BAE1B17F4B7B60027CE3D /* Frameworks */,
+				A24BAE1C17F4B7B60027CE3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A24BAE2317F4B7B60027CE3D /* PBXTargetDependency */,
+			);
+			name = iTunesFestivalDownloaderTests;
+			productName = iTunesFestivalDownloaderTests;
+			productReference = A24BAE1E17F4B7B60027CE3D /* iTunesFestivalDownloaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A24BADF517F4B7B50027CE3D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JVA;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = KerrelInc;
+				TargetAttributes = {
+					A24BAE1D17F4B7B60027CE3D = {
+						TestTargetID = A24BADFC17F4B7B50027CE3D;
+					};
+				};
+			};
+			buildConfigurationList = A24BADF817F4B7B50027CE3D /* Build configuration list for PBXProject "iTunesFestivalDownloader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A24BADF417F4B7B50027CE3D;
+			productRefGroup = A24BADFE17F4B7B50027CE3D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A24BADFC17F4B7B50027CE3D /* iTunesFestivalDownloader */,
+				A24BAE1D17F4B7B60027CE3D /* iTunesFestivalDownloaderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A24BADFB17F4B7B50027CE3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A24BAE0B17F4B7B50027CE3D /* InfoPlist.strings in Resources */,
+				A24BAE1917F4B7B50027CE3D /* Images.xcassets in Resources */,
+				A24BAE1117F4B7B50027CE3D /* Credits.rtf in Resources */,
+				A24BAE1717F4B7B50027CE3D /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A24BAE1C17F4B7B60027CE3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A24BAE2917F4B7B60027CE3D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A24BADF917F4B7B50027CE3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A24BAE1417F4B7B50027CE3D /* iTunesFDAppDelegate.m in Sources */,
+				A24BAE0D17F4B7B50027CE3D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A24BAE1A17F4B7B60027CE3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A24BAE2B17F4B7B60027CE3D /* iTunesFestivalDownloaderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A24BAE2317F4B7B60027CE3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A24BADFC17F4B7B50027CE3D /* iTunesFestivalDownloader */;
+			targetProxy = A24BAE2217F4B7B60027CE3D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A24BAE0917F4B7B50027CE3D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A24BAE0A17F4B7B50027CE3D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A24BAE0F17F4B7B50027CE3D /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A24BAE1017F4B7B50027CE3D /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		A24BAE1517F4B7B50027CE3D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A24BAE1617F4B7B50027CE3D /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		A24BAE2717F4B7B60027CE3D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A24BAE2817F4B7B60027CE3D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A24BAE2C17F4B7B60027CE3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A24BAE2D17F4B7B60027CE3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A24BAE2F17F4B7B60027CE3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTunesFestivalDownloader/iTunesFestivalDownloader-Prefix.pch";
+				INFOPLIST_FILE = "iTunesFestivalDownloader/iTunesFestivalDownloader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A24BAE3017F4B7B60027CE3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTunesFestivalDownloader/iTunesFestivalDownloader-Prefix.pch";
+				INFOPLIST_FILE = "iTunesFestivalDownloader/iTunesFestivalDownloader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A24BAE3217F4B7B60027CE3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iTunesFestivalDownloader.app/Contents/MacOS/iTunesFestivalDownloader";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTunesFestivalDownloader/iTunesFestivalDownloader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "iTunesFestivalDownloaderTests/iTunesFestivalDownloaderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A24BAE3317F4B7B60027CE3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iTunesFestivalDownloader.app/Contents/MacOS/iTunesFestivalDownloader";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTunesFestivalDownloader/iTunesFestivalDownloader-Prefix.pch";
+				INFOPLIST_FILE = "iTunesFestivalDownloaderTests/iTunesFestivalDownloaderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A24BADF817F4B7B50027CE3D /* Build configuration list for PBXProject "iTunesFestivalDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A24BAE2C17F4B7B60027CE3D /* Debug */,
+				A24BAE2D17F4B7B60027CE3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A24BAE2E17F4B7B60027CE3D /* Build configuration list for PBXNativeTarget "iTunesFestivalDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A24BAE2F17F4B7B60027CE3D /* Debug */,
+				A24BAE3017F4B7B60027CE3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A24BAE3117F4B7B60027CE3D /* Build configuration list for PBXNativeTarget "iTunesFestivalDownloaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A24BAE3217F4B7B60027CE3D /* Debug */,
+				A24BAE3317F4B7B60027CE3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A24BADF517F4B7B50027CE3D /* Project object */;
+}
