@@ -23,6 +23,7 @@ typedef enum DownloadTypes{
 @property (nonatomic, strong) NSString * currentFileName;
 @property (nonatomic, readonly) NSString * URLString;
 @property (nonatomic, strong) NSString * tsFilePath;
+@property (nonatomic, strong) NSArray * fileNames;
 @end
 
 #define kBaseStorePath @"/Users/Joride/Desktop/iTunes Festival/Aloe Blacc/"
@@ -35,7 +36,10 @@ typedef enum DownloadTypes{
     NSMutableData * _data;
     long long                   _expectedContentLength;
     NSInteger                   _cumulativeReveivedBytes;
+    
+    NSInteger _currentIndex;
 }
+
 @synthesize currentTSFileName = _currentTSFileName;
 @synthesize currentDownloadType = _currentDownloadType;
 @synthesize currentPath = _currentPath;
@@ -70,6 +74,16 @@ typedef enum DownloadTypes{
     NSURLConnection * connection = [[NSURLConnection alloc] initWithRequest: request delegate: self];
 }
 - (void) downloadTSFile{
+    if ([self fileExistsAtPath: self.currentPath]) {
+        NSLog(@"SKIP '%@' (file %i)", self.currentFileName, _currentIndex);
+        if (_currentIndex < self.fileNames.count -1) {
+            _currentIndex++;
+            self.currentFileName = self.fileNames[_currentIndex];
+            [self downloadTSFile];
+        }
+        return;
+    }
+    
     self.currentDownloadType = kDownloadTypeTSFile;
     NSURL * URL = [NSURL URLWithString: self.URLString];
     
@@ -122,21 +136,31 @@ typedef enum DownloadTypes{
     NSArray  * components       = [streamFilesList componentsSeparatedByCharactersInSet: [NSCharacterSet newlineCharacterSet]];
     
     NSPredicate * containsDotTS = [NSPredicate predicateWithFormat: @"self CONTAINS %@", @".ts"];
-    NSArray * filteredArray = [components filteredArrayUsingPredicate: containsDotTS];
-    NSString * selectedFile = filteredArray[200]; //[filteredArray lastObject];
+    self.fileNames = [components filteredArrayUsingPredicate: containsDotTS];
     
+    NSString * selectedFile = self.fileNames[0];
     self.currentFileName = selectedFile;
     
     [self downloadTSFile];
     
 }
+- (BOOL) fileExistsAtPath: (NSString *) path{
+    NSFileManager * fileManager = [NSFileManager defaultManager];
+    return [fileManager fileExistsAtPath: path];
+}
 
 - (void) handleTSFileData: (NSData *) data{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"--SAVED file '%@' (file %i)--", self.currentFileName, _currentIndex);
         [data writeToFile: self.currentPath atomically: YES];
     });
+    
+    if (_currentIndex < self.fileNames.count -1) {
+        _currentIndex++;
+        self.currentFileName = self.fileNames[_currentIndex];
+        [self downloadTSFile];
+    }
 }
-
 
 #pragma mark - NSURLConnectionDelegate
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
@@ -152,7 +176,7 @@ typedef enum DownloadTypes{
     CGFloat expected = _expectedContentLength * 1.0f;
     
     self.progression = (received / expected);
-    NSLog(@"%.2f of %.2f bytes received. (%2.2f%%)", received, expected, self.progression * 100.0f);
+    //NSLog(@"%.2f of %.2f bytes received. (%2.2f%%)", received, expected, self.progression * 100.0f);
     
     if (_data == nil) {
         _data = [[NSMutableData alloc] init];
