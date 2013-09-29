@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A243FE2017F81CFD001A83D9 /* JVAFileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = A243FE1F17F81CFD001A83D9 /* JVAFileDownloader.m */; };
+		A243FE2017F81CFD001A83D9 /* FileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = A243FE1F17F81CFD001A83D9 /* FileDownloader.m */; };
+		A243FE2317F85AEC001A83D9 /* DownloadQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A243FE2217F85AEC001A83D9 /* DownloadQueue.m */; };
 		A24BAE0117F4B7B50027CE3D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24BAE0017F4B7B50027CE3D /* Cocoa.framework */; };
 		A24BAE0B17F4B7B50027CE3D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A24BAE0917F4B7B50027CE3D /* InfoPlist.strings */; };
 		A24BAE0D17F4B7B50027CE3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A24BAE0C17F4B7B50027CE3D /* main.m */; };
@@ -32,8 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A243FE1E17F81CFD001A83D9 /* JVAFileDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVAFileDownloader.h; sourceTree = "<group>"; };
-		A243FE1F17F81CFD001A83D9 /* JVAFileDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVAFileDownloader.m; sourceTree = "<group>"; };
+		A243FE1E17F81CFD001A83D9 /* FileDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileDownloader.h; sourceTree = "<group>"; };
+		A243FE1F17F81CFD001A83D9 /* FileDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileDownloader.m; sourceTree = "<group>"; };
+		A243FE2117F85AEC001A83D9 /* DownloadQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadQueue.h; sourceTree = "<group>"; };
+		A243FE2217F85AEC001A83D9 /* DownloadQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadQueue.m; sourceTree = "<group>"; };
 		A24BADFD17F4B7B50027CE3D /* iTunesFestivalDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesFestivalDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A24BAE0017F4B7B50027CE3D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A24BAE0317F4B7B50027CE3D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -120,8 +123,10 @@
 			children = (
 				A24BAE1217F4B7B50027CE3D /* iTunesFDAppDelegate.h */,
 				A24BAE1317F4B7B50027CE3D /* iTunesFDAppDelegate.m */,
-				A243FE1E17F81CFD001A83D9 /* JVAFileDownloader.h */,
-				A243FE1F17F81CFD001A83D9 /* JVAFileDownloader.m */,
+				A243FE1E17F81CFD001A83D9 /* FileDownloader.h */,
+				A243FE1F17F81CFD001A83D9 /* FileDownloader.m */,
+				A243FE2117F85AEC001A83D9 /* DownloadQueue.h */,
+				A243FE2217F85AEC001A83D9 /* DownloadQueue.m */,
 				A24BAE1517F4B7B50027CE3D /* MainMenu.xib */,
 				A24BAE1817F4B7B50027CE3D /* Images.xcassets */,
 				A24BAE0717F4B7B50027CE3D /* Supporting Files */,
@@ -259,7 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A24BAE1417F4B7B50027CE3D /* iTunesFDAppDelegate.m in Sources */,
-				A243FE2017F81CFD001A83D9 /* JVAFileDownloader.m in Sources */,
+				A243FE2017F81CFD001A83D9 /* FileDownloader.m in Sources */,
+				A243FE2317F85AEC001A83D9 /* DownloadQueue.m in Sources */,
 				A24BAE0D17F4B7B50027CE3D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

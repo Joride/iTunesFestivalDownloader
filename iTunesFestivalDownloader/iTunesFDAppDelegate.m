@@ -7,12 +7,12 @@
 //
 
 #import "iTunesFDAppDelegate.h"
-#import "JVAFileDownloader.h"
+#import "FileDownloader.h"
+#import "DownloadQueue.h"
 
 typedef enum DownloadTypes{
     kDownloadTypeBandWidthsList,
     kDownloadTypeStreamFilesList,
-    kDownloadTypeTSFile
 }DownloadType;
 
 
@@ -79,27 +79,6 @@ typedef enum DownloadTypes{
 
     NSURLConnection * connection = [[NSURLConnection alloc] initWithRequest: request delegate: self];
 }
-- (void) downloadTSFile{
-    if ([self fileExistsAtPath: self.currentPath]) {
-        NSLog(@"SKIP '%@' (file %i)", self.currentFileName, _currentIndex);
-        if (_currentIndex < self.fileNames.count -1) {
-            _currentIndex++;
-            self.currentFileName = self.fileNames[_currentIndex];
-            [self downloadTSFile];
-        }
-        return;
-    }
-    
-    self.currentDownloadType = kDownloadTypeTSFile;
-    NSURL * URL = [NSURL URLWithString: self.URLString];
-    
-    NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL: URL];
-    [request setHTTPMethod: @"GET"];
-    NSString * cookieString = kCOOKIEString;
-    [request addValue: cookieString forHTTPHeaderField: @"Cookie"];
-    
-    NSURLConnection * connection = [[NSURLConnection alloc] initWithRequest: request delegate: self];
-}
 
 #pragma mark - Helper methods
 - (NSString *) URLString{
@@ -155,54 +134,24 @@ typedef enum DownloadTypes{
     }
     
     NSInteger index= 0;
+    DownloadQueue * queue = [DownloadQueue sharedQueue];
+    queue.maxSimultaneousDownloads = 5;
     for (NSString * aFileName in self.fileNames) {
-        NSLog(@"Starting download (%i/%i):%@", self.fileNames.count, index, aFileName);
-        
+        NSLog(@"enque '%@'", aFileName);
         index++;
-        JVAFileDownloader * downloader = [[JVAFileDownloader alloc] initWithFileName: aFileName
+        FileDownloader * downloader = [[FileDownloader alloc] initWithFileName: aFileName
                                                                             savePath: kBaseStorePath
                                                                                  URL: kBaseURL
                                                                                 date: kDateString
                                                                           remotePath: self.tsFilePath
                                                                        GETParameters: kGETParamaters
-                                                                              cookie: kCOOKIEString
-                                                                          completion:^(BOOL success) {
-                                                                              if (success) {
-                                                                                  NSLog(@"%@ SAVED" , aFileName);
-                                                                              } else
-                                                                                  NSLog(@"%@ NOT SAVE", aFileName);
-                                                                          }];
-        [downloader startDownload];
-        if (index == 5 ) {
-            break;
-        }
+                                                                        cookie: kCOOKIEString];
+        [queue addDownloader: downloader];
     }
-    return;
-    
-    
-    
-    NSString * selectedFile = self.fileNames[0];
-    self.currentFileName = selectedFile;
-    
-    [self downloadTSFile];
-    
 }
 - (BOOL) fileExistsAtPath: (NSString *) path{
     NSFileManager * fileManager = [NSFileManager defaultManager];
     return [fileManager fileExistsAtPath: path];
-}
-
-- (void) handleTSFileData: (NSData *) data{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [data writeToFile: self.currentPath atomically: YES];
-        NSLog(@"SAVED '%@' (file %i of %i) to '%@'", self.currentFileName, _currentIndex, self.fileNames.count, self.currentPath);
-    });
-    
-    if (_currentIndex < self.fileNames.count -1) {
-        _currentIndex++;
-        self.currentFileName = self.fileNames[_currentIndex];
-        [self downloadTSFile];
-    }
 }
 
 #pragma mark - NSURLConnectionDelegate
@@ -233,9 +182,6 @@ typedef enum DownloadTypes{
             break;
         case kDownloadTypeStreamFilesList:
             [self handleStreamFilesList: _data];
-            break;
-        case kDownloadTypeTSFile:
-            [self handleTSFileData: _data];
             break;
             
         default:
