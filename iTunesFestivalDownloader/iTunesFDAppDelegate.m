@@ -7,6 +7,7 @@
 //
 
 #import "iTunesFDAppDelegate.h"
+#import "JVAFileDownloader.h"
 
 typedef enum DownloadTypes{
     kDownloadTypeBandWidthsList,
@@ -26,12 +27,15 @@ typedef enum DownloadTypes{
 @property (nonatomic, strong) NSArray * fileNames;
 @end
 
-#define kBaseStorePath @"/Users/jvanasselt/Documents/iTunes Festival/Valerie June/"
-#define kBaseURL @"http://streaming.itunesfestival.com/auth/eu6/vod/20130910/v1/"
+#define kBaseStorePath @"/Users/Jorrit/Desktop/iTunes Festival/Aloe Blacc/"
+#define kBaseURL @"http://streaming.itunesfestival.com/auth/eu6/vod/"
 
-#define kGETParamaters @"?token=expires=1380482104~access=/auth/*~md5=ef0a6c04a2941c153dfd09a35c84bd9a"
-#define kCOOKIEString @"token=expires=1380482104~access=/auth/*~md5=ef0a6c04a2941c153dfd09a35c84bd9a; ITMFID=6625D6BDE013E98DC0DCB739824A7E73; __utma=29778407.422461867.1378066900.1378236135.1378932215.4; __utmz=29778407.1378932215.4.4.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); _ga=GA1.2.422461867.1378066900"
-#define kInitialFileName @"313040471_valeriejune_desktop_vod.m3u8"
+#define kGETParamaters @"?token=expires=1380485705~access=/auth/*~md5=812adeb5093d8b6b7f457978336e46de"
+#define kCOOKIEString @"token=expires=1380485705~access=/auth/*~md5=812adeb5093d8b6b7f457978336e46de; ITMFID=6625D6BDE013E98DC0DCB739824A7E73; __utma=29778407.422461867.1378066900.1378236135.1378932215.4; __utmz=29778407.1378932215.4.4.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); _ga=GA1.2.422461867.1378066900"
+#define kInitialFileName @"4750752_aloeblacc_desktop_vod.m3u8"
+
+#define kDateString @"20130924"
+
 
 @implementation iTunesFDAppDelegate{
     NSMutableData * _data;
@@ -49,7 +53,8 @@ typedef enum DownloadTypes{
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    self.currentFileName = kInitialFileName;
+    self.currentFileName = @"4750752_aloeblacc_desktop_vod.m3u8";
+
     [self downloadBandWidthList];
 }
 - (void) downloadBandWidthList{
@@ -100,9 +105,9 @@ typedef enum DownloadTypes{
 - (NSString *) URLString{
     NSString * returnValue;
     if (self.tsFilePath){
-        returnValue = [NSString stringWithFormat: @"%@%@/%@%@", kBaseURL, self.tsFilePath, self.currentFileName, kGETParamaters];
+        returnValue = [NSString stringWithFormat: @"%@%@/v1/%@/%@%@", kBaseURL, kDateString, self.tsFilePath, self.currentFileName, kGETParamaters];
     } else{
-        returnValue = [NSString stringWithFormat: @"%@%@%@", kBaseURL, self.currentFileName, kGETParamaters];
+        returnValue = [NSString stringWithFormat: @"%@%@/v1/%@%@", kBaseURL, kDateString, self.currentFileName, kGETParamaters];
     }
     return returnValue;
 }
@@ -139,6 +144,43 @@ typedef enum DownloadTypes{
     NSPredicate * containsDotTS = [NSPredicate predicateWithFormat: @"self CONTAINS %@", @".ts"];
     self.fileNames = [components filteredArrayUsingPredicate: containsDotTS];
     
+    NSString * fileList = [self.fileNames componentsJoinedByString: @"\n"];
+    NSString * savePath = [kBaseStorePath stringByAppendingPathComponent: @"filelist.txt"];
+    NSError * error = nil;
+    if (![fileList writeToFile: savePath
+                    atomically: YES
+                      encoding: NSUTF8StringEncoding
+                         error: &error]){
+        NSLog(@"ERROR SAVING FILE LIST: %@, %@", error, [error localizedDescription]);
+    }
+    
+    NSInteger index= 0;
+    for (NSString * aFileName in self.fileNames) {
+        NSLog(@"Starting download (%i/%i):%@", self.fileNames.count, index, aFileName);
+        
+        index++;
+        JVAFileDownloader * downloader = [[JVAFileDownloader alloc] initWithFileName: aFileName
+                                                                            savePath: kBaseStorePath
+                                                                                 URL: kBaseURL
+                                                                                date: kDateString
+                                                                          remotePath: self.tsFilePath
+                                                                       GETParameters: kGETParamaters
+                                                                              cookie: kCOOKIEString
+                                                                          completion:^(BOOL success) {
+                                                                              if (success) {
+                                                                                  NSLog(@"%@ SAVED" , aFileName);
+                                                                              } else
+                                                                                  NSLog(@"%@ NOT SAVE", aFileName);
+                                                                          }];
+        [downloader startDownload];
+        if (index == 5 ) {
+            break;
+        }
+    }
+    return;
+    
+    
+    
     NSString * selectedFile = self.fileNames[0];
     self.currentFileName = selectedFile;
     
@@ -152,8 +194,8 @@ typedef enum DownloadTypes{
 
 - (void) handleTSFileData: (NSData *) data{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSLog(@"--SAVED file '%@' (file %i)--", self.currentFileName, _currentIndex);
         [data writeToFile: self.currentPath atomically: YES];
+        NSLog(@"SAVED '%@' (file %i of %i) to '%@'", self.currentFileName, _currentIndex, self.fileNames.count, self.currentPath);
     });
     
     if (_currentIndex < self.fileNames.count -1) {
