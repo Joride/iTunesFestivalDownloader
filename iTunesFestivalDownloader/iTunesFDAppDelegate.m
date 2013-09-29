@@ -41,11 +41,19 @@ typedef enum DownloadTypes{
  Aloe Blacc
 #define kBaseStorePath @"/Users/Jorrit/Desktop/iTunes Festival/Aloe Blacc/"
 #define kGETParamaters @"?token=expires=1380485705~access=/auth/*~md5=812adeb5093d8b6b7f457978336e46de"
-#define kCOOKIEString @"token=expires=1380485705~access=/auth/*~md5=812adeb5093d8b6b7f457978336e46de; ITMFID=6625D6BDE013E98DC0DCB739824A7E73; __utma=29778407.422461867.1378066900.1378236135.1378932215.4; __utmz=29778407.1378932215.4.4.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); _ga=GA1.2.422461867.1378066900"
-#define kInitialFileName @"4750752_aloeblacc_desktop_vod.m3u8"
+#define kCOOKIEString @"token=expires=1380525302~access=/auth/*~md5=e164cde335711c6e7c188ca7c7ec9f54; ITMFID=6625D6BDE013E98DC0DCB739824A7E73; __utma=29778407.422461867.1378066900.1378236135.1378932215.4; __utmz=29778407.1378932215.4.4.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); _ga=GA1.2.422461867.1378066900"
+#define kInitialFileName @"555106_chicfeaturingnilerodgers_desktop_vod.m3u8"
 #define kDateString @"20130924"
 */
 
+/*
+ Chic featuring Nile Rodgers
+ #define kBaseStorePath @"/Users/Jorrit/Desktop/iTunes Festival/Chic featuring Nile Rodgers/"
+ #define kGETParamaters @"?token=expires=1380525302~access=/auth/*~md5=e164cde335711c6e7c188ca7c7ec9f54"
+ #define kCOOKIEString @"token=expires=1380485705~access=/auth/*~md5=812adeb5093d8b6b7f457978336e46de; ITMFID=6625D6BDE013E98DC0DCB739824A7E73; __utma=29778407.422461867.1378066900.1378236135.1378932215.4; __utmz=29778407.1378932215.4.4.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); _ga=GA1.2.422461867.1378066900"
+ #define kInitialFileName @"4750752_aloeblacc_desktop_vod.m3u8"
+ #define kDateString @"20130914"
+ */
 
 /** Jake Bugg */
  #define kBaseStorePath @"/Users/Jorrit/Desktop/iTunes Festival/Jake Bugg/"
