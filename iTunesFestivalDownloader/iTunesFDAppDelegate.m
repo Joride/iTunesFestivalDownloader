@@ -26,11 +26,12 @@ typedef enum DownloadTypes{
 @property (nonatomic, strong) NSArray * fileNames;
 @end
 
-#define kBaseStorePath @"/Users/Joride/Desktop/iTunes Festival/Aloe Blacc/"
-#define kBaseURL @"http://streaming.itunesfestival.com/auth/eu6/vod/20130924/v1/"
+#define kBaseStorePath @"/Users/jvanasselt/Documents/iTunes Festival/Valerie June/"
+#define kBaseURL @"http://streaming.itunesfestival.com/auth/eu6/vod/20130910/v1/"
 
-#define kGETParamaters @"?token=expires=1380435303~access=/auth/*~md5=f843491726f219ca694ef513351cd907"
-#define kCOOKIEString @"token=expires=1380435303~access=/auth/*~md5=f843491726f219ca694ef513351cd907; ITMFID=6625D6BDE013E98DC0DCB739824A7E73; __utma=29778407.422461867.1378066900.1378236135.1378932215.4; __utmz=29778407.1378932215.4.4.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); _ga=GA1.2.422461867.1378066900"
+#define kGETParamaters @"?token=expires=1380482104~access=/auth/*~md5=ef0a6c04a2941c153dfd09a35c84bd9a"
+#define kCOOKIEString @"token=expires=1380482104~access=/auth/*~md5=ef0a6c04a2941c153dfd09a35c84bd9a; ITMFID=6625D6BDE013E98DC0DCB739824A7E73; __utma=29778407.422461867.1378066900.1378236135.1378932215.4; __utmz=29778407.1378932215.4.4.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); _ga=GA1.2.422461867.1378066900"
+#define kInitialFileName @"313040471_valeriejune_desktop_vod.m3u8"
 
 @implementation iTunesFDAppDelegate{
     NSMutableData * _data;
@@ -48,7 +49,7 @@ typedef enum DownloadTypes{
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    self.currentFileName = @"4750752_aloeblacc_desktop_vod.m3u8";
+    self.currentFileName = kInitialFileName;
     [self downloadBandWidthList];
 }
 - (void) downloadBandWidthList{
