@@ -55,13 +55,23 @@ typedef enum DownloadTypes{
  #define kDateString @"20130914"
  */
 
-/** Jake Bugg */
+/*  Nile Rodgers */
+
+ #define kBaseStorePath @"/Users/Jorrit/Desktop/iTunes Festival/Jack Johnson/"
+ #define kGETParamaters @"?token=expires=1380557701~access=/auth/*~md5=5f4b9221c3a4a4182eb84bc520f9d6da"
+ #define kCOOKIEString @"token=expires=1380557701~access=/auth/*~md5=5f4b9221c3a4a4182eb84bc520f9d6da; ITMFID=6625D6BDE013E98DC0DCB739824A7E73; __utma=29778407.422461867.1378066900.1378236135.1378932215.4; __utmz=29778407.1378932215.4.4.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); _ga=GA1.2.422461867.1378066900"
+ #define kInitialFileName @"909253_jackjohnson_desktop_vod.m3u8"
+ #define kDateString @"20130916"
+ /**/
+
+
+/** Jake Bugg *
  #define kBaseStorePath @"/Users/Jorrit/Desktop/iTunes Festival/Jake Bugg/"
  #define kGETParamaters @"?token=expires=1380518103~access=/auth/*~md5=68adba87855db268824ad73e386485c8"
  #define kCOOKIEString @"token=expires=1380518103~access=/auth/*~md5=68adba87855db268824ad73e386485c8; ITMFID=6625D6BDE013E98DC0DCB739824A7E73; __utma=29778407.422461867.1378066900.1378236135.1378932215.4; __utmz=29778407.1378932215.4.4.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); _ga=GA1.2.422461867.1378066900"
  #define kInitialFileName @"445598869_jakebugg_desktop_vod.m3u8"
  #define kDateString @"20130910"
-/* */
+* */
 
 @implementation iTunesFDAppDelegate{
     NSMutableData * _data;
