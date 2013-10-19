@@ -20,6 +20,8 @@
 		A24BAE2117F4B7B60027CE3D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24BAE0017F4B7B50027CE3D /* Cocoa.framework */; };
 		A24BAE2917F4B7B60027CE3D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A24BAE2717F4B7B60027CE3D /* InfoPlist.strings */; };
 		A24BAE2B17F4B7B60027CE3D /* iTunesFestivalDownloaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A24BAE2A17F4B7B60027CE3D /* iTunesFestivalDownloaderTests.m */; };
+		A2A77DA51812CE4800893DE0 /* iTunesFileDownloader.pages in Resources */ = {isa = PBXBuildFile; fileRef = A2A77DA31812CE4800893DE0 /* iTunesFileDownloader.pages */; };
+		A2A77DA61812CE4800893DE0 /* iTunesFileDownloader.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A2A77DA41812CE4800893DE0 /* iTunesFileDownloader.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		A24BAE2617F4B7B60027CE3D /* iTunesFestivalDownloaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTunesFestivalDownloaderTests-Info.plist"; sourceTree = "<group>"; };
 		A24BAE2817F4B7B60027CE3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A24BAE2A17F4B7B60027CE3D /* iTunesFestivalDownloaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTunesFestivalDownloaderTests.m; sourceTree = "<group>"; };
+		A2A77DA31812CE4800893DE0 /* iTunesFileDownloader.pages */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesFileDownloader.pages; sourceTree = "<group>"; };
+		A2A77DA41812CE4800893DE0 /* iTunesFileDownloader.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = iTunesFileDownloader.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 		A24BADF417F4B7B50027CE3D = {
 			isa = PBXGroup;
 			children = (
+				A2A77DA31812CE4800893DE0 /* iTunesFileDownloader.pages */,
+				A2A77DA41812CE4800893DE0 /* iTunesFileDownloader.pdf */,
 				A24BAE0617F4B7B50027CE3D /* iTunesFestivalDownloader */,
 				A24BAE2417F4B7B60027CE3D /* iTunesFestivalDownloaderTests */,
 				A24BADFF17F4B7B50027CE3D /* Frameworks */,
@@ -242,9 +248,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A24BAE0B17F4B7B50027CE3D /* InfoPlist.strings in Resources */,
+				A2A77DA61812CE4800893DE0 /* iTunesFileDownloader.pdf in Resources */,
 				A24BAE1917F4B7B50027CE3D /* Images.xcassets in Resources */,
 				A24BAE1117F4B7B50027CE3D /* Credits.rtf in Resources */,
 				A24BAE1717F4B7B50027CE3D /* MainMenu.xib in Resources */,
+				A2A77DA51812CE4800893DE0 /* iTunesFileDownloader.pages in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
